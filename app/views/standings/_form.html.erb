@@ -1,0 +1,52 @@
+<%= form_with(model: standing, local: true) do |form| %>
+  <% if standing.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(standing.errors.count, "error") %> prohibited this standing from being saved:</h2>
+
+      <ul>
+      <% standing.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :team_id %>
+    <%= form.text_field :team_id, id: :standing_team_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :wins %>
+    <%= form.number_field :wins, id: :standing_wins %>
+  </div>
+
+  <div class="field">
+    <%= form.label :draws %>
+    <%= form.number_field :draws, id: :standing_draws %>
+  </div>
+
+  <div class="field">
+    <%= form.label :losses %>
+    <%= form.number_field :losses, id: :standing_losses %>
+  </div>
+
+  <div class="field">
+    <%= form.label :goals_for %>
+    <%= form.number_field :goals_for, id: :standing_goals_for %>
+  </div>
+
+  <div class="field">
+    <%= form.label :goals_against %>
+    <%= form.number_field :goals_against, id: :standing_goals_against %>
+  </div>
+
+  <div class="field">
+    <%= form.label :points %>
+    <%= form.number_field :points, id: :standing_points %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

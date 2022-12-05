@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Round:</strong>
+  <%= @fixture.round.name %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @fixture.date %>
+</p>
+
+<p>
+  <strong>Session:</strong>
+  <%= @fixture.session.format_time %>
+</p>
+
+<p>
+  <strong>Home:</strong>
+  <%= @fixture.home.name %>
+</p>
+
+<p>
+  <strong>Home flag:</strong>
+  <%= image_tag @fixture.home.flag %>
+</p>
+
+<p>
+  <strong>Channel:</strong>
+  <%= image_tag @fixture.channel.logo %>
+</p>
+
+<p>
+  <strong>Away flag:</strong>
+  <%= image_tag @fixture.away.flag %>
+</p>
+
+<%= link_to 'Edit', edit_fixture_path(@fixture) %> |
+<%= link_to 'Back', fixtures_path %>

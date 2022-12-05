@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Team:</strong>
+  <%= @standing.team %>
+</p>
+
+<p>
+  <strong>Wins:</strong>
+  <%= @standing.wins %>
+</p>
+
+<p>
+  <strong>Draws:</strong>
+  <%= @standing.draws %>
+</p>
+
+<p>
+  <strong>Losses:</strong>
+  <%= @standing.losses %>
+</p>
+
+<p>
+  <strong>Goals for:</strong>
+  <%= @standing.goals_for %>
+</p>
+
+<p>
+  <strong>Goals against:</strong>
+  <%= @standing.goals_against %>
+</p>
+
+<p>
+  <strong>Points:</strong>
+  <%= @standing.points %>
+</p>
+
+<%= link_to 'Edit', edit_standing_path(@standing) %> |
+<%= link_to 'Back', standings_path %>

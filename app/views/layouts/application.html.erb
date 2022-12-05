@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><% if content_for?(:title) %><%= yield :title %><% else %>World Cup<% end %></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <nav class="navbar navbar-fixed-top">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="#" class="navbar-brand"><%= image_tag 'logo.png', width: "72", height: "33" %></a>
+        </div> <!--end navbar-header -->
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="navbar-links">
+          <ul class="navbar-right">
+            <li><%= link_to  '',
+              root_path, class: "glyphicon glyphicon-home"  %>
+            </li> 
+            <li><%= link_to 'Matches', fixtures_path %></li>
+            <li><%= link_to 'Results', results_path %></li>
+            <li><%= link_to 'Date', criteria_path %></li>
+            <li><%= link_to 'Teams', teams_path %></li>
+            <li><%= link_to 'Fifa', "https://www.fifa.com/worldcup/matches/", target: "_blank" %></li>
+
+          </ul>
+        </div><!--end of collapse navbar-collapse -->
+
+    </nav>  <!-- End of nav element --> 
+    <div class="container bodyContent"> <!-- from Bootstrap for Rails -->
+      <%= yield %>
+    </div> <!-- end of container -->
+
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+<% content_for :title, 'Matches' %>
+
+<h1>Matches</h1>
+<%= link_to 'New Fixture', new_fixture_path %>
+
+<table id="matches">  
+
+
+  <tbody>
+    <% @fixtures.each do |fixture| %>
+      <tr>
+        <td><%= fixture.round.name %></td>
+        <td><%= fixture.date.strftime("%a, %b %d") %></td>
+        <td><%= fixture.session.format_time %></td>
+        <td><%= fixture.home.group %></td>
+        <td><%= fixture.home.name %></td>
+        <td><%= image_tag fixture.home.flag, width: "50", height: "25" %></td>
+
+        <% @result = Result.find_by_fixture_id(fixture.id) %>
+        <% if @result != nil %>  
+          <td><%= @result.home_goals.to_s + '-' +
+                  @result.away_goals.to_s %></td> 
+        <% else %>
+          <td><%= link_to 'Result', new_result_path(:param1 => fixture.id, 
+            :param2 => fixture.home.name+' '+fixture.home.id.to_s,
+            :param3 => fixture.away.name+' '+fixture.away.id.to_s),
+            :class => "btn btn-info btn-lg" %></td>
+        <% end %> 
+                
+        <td><%= image_tag fixture.away.flag, width: "50", height: "25" %></td>
+        <td><%= fixture.away.name %></td>
+        <td><%= link_to_icon 'Show', fixture %></td>
+        <td><%= link_to_icon 'Edit', edit_fixture_path(fixture) %></td>        
+        <td><%= link_to_icon 'Destroy', fixture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fixture', new_fixture_path %>

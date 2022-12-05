@@ -1,0 +1,22 @@
+<%= form_with(model: criterium, local: true) do |form| %>
+  <% if criterium.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(criterium.errors.count, "error") %> prohibited this criterium from being saved:</h2>
+
+      <ul>
+      <% criterium.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :show_date %>
+    <%= form.date_select :show_date, id: :criterium_show_date %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,42 @@
+<%= form_for(result) do |f| %>
+  <% if result.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(result.errors.count, "error") %> prohibited this result from being saved:</h2>
+
+      <ul>
+      <% result.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :fixture_id %><br>
+    <%= f.number_field :fixture_id, value: params[:param1] %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label 'Home Team' %><br />
+    <%= params[:param2] %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label 'Home goals' %>
+    <%= f.number_field :home_goals, value: 0 %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label 'Away Team' %><br />
+    <%= params[:param3] %>
+  </div>
+
+  <div class="form">
+    <%= f.label 'Away goals' %>
+    <%= f.number_field :away_goals, value: 0 %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

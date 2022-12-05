@@ -1,0 +1,33 @@
+name,group,ranking,flag
+Ecuador,A,1,ecu.png
+Senegal,A,2,sen.png
+Netherlands,A,3,ned.png
+Qatar,A,4,qat.png
+England ,B,1,eng.png
+United States,B,2,usa.png
+Wales,B,3,wal.png
+Iran,B,4,irn.png
+Argentina,C,1,arg.png
+Saudi Arabia,C,2,ksa.png
+Mexico,C,3,mex.png
+Poland ,C,4,pol.png
+France ,D,1,fra.png
+Australia,D,2,aus.png
+Denmark ,D,3,den.png
+Tunisia,D,4,tun.png
+Spain ,E,1,esp.png
+Costa Rica,E,2,crc.png
+Germany ,E,3,ger.png
+Japan,E,4,jpn.png
+Belgium ,F,1,bel.png
+Canada,F,2,can.png
+Morocco,F,3,mar.png
+Croatia,F,4,cro.png
+Brazil,G,1,bra.png
+Serbia ,G,2,srb.png
+Switzerland ,G,3,sui.png
+Cameroon,G,4,cmr.png
+Portugal ,H,1,por.png
+Ghana,H,2,gha.png
+Uruguay,H,3,uru.png
+Korea Republic,H,4,kor.png

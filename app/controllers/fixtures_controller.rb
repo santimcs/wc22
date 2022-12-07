@@ -6,6 +6,10 @@ class FixturesController < ApplicationController
     @fixtures = Fixture.left_joins(:criterium).where("fixtures.date >= criteria.show_date")
   end
 
+  def list_fixtures
+    @fixtures = Fixture.left_joins(:criterium).where("fixtures.date >= criteria.show_date")
+  end
+
   # GET /fixtures/1 or /fixtures/1.json
   def show
   end

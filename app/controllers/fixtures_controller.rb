@@ -3,7 +3,7 @@ class FixturesController < ApplicationController
 
   # GET /fixtures or /fixtures.json
   def index
-    @fixtures = Fixture.left_joins(:criterium).where("fixtures.date >= criteria.show_date")
+    @fixtures = Fixture.all
   end
 
   def list_fixtures

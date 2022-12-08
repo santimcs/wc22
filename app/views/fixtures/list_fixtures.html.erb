@@ -11,7 +11,7 @@
         <td><%= fixture.round.name %></td>
         <td><%= fixture.date.strftime("%b %d") %> <%= fixture.session.format_time %></td>
         <td><%= fixture.home.name %></td>
-
+        <td><%= image_tag fixture.home.flag, width: "50", height: "25" %></td>
         <% @result = Result.find_by_fixture_id(fixture.id) %>
         <% if @result != nil %>  
           <td align="center"><%= @result.home_goals.to_s + ' - ' +
@@ -19,7 +19,7 @@
         <% else %>
           <td><%= link_to fixture.channel.name, "http://"+fixture.channel.url, target: "_new", class: "btn btn-info" %></td>    
         <% end %>
-
+        <td><%= image_tag fixture.away.flag, width: "50", height: "25" %></td>
         <td><%= fixture.away.name %></td>
 
       </tr>

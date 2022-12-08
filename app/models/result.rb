@@ -1,5 +1,5 @@
 class Result < ApplicationRecord
-    belongs_to :fixture
+  belongs_to :fixture
   default_scope { order("id DESC")}
 # before_save :assign_points
 # before_destroy :deduct_points

@@ -11,21 +11,19 @@
 
   <body>
     <nav class="navbar navbar-fixed-top">
+
         <div class="navbar-header">
           <a href="#" class="navbar-brand">
             <%= image_tag 'logo.png', width: "72", height: "33" %>
           </a>
         </div> <!--end navbar-header -->
-        <%# <a href="#" class="toggle-button">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </a> %>
-          <a href="#" class="toggle-button">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
+
+        <a href="#" class="toggle-button"  onclick = "fun();" >
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+
         <div class="navbar-links">
           <ul class="navbar-right">
             <li><%= link_to  '', root_path, class: "glyphicon glyphicon-home"  %></li> 
@@ -37,11 +35,16 @@
             <li><%= link_to 'Fifa', "https://www.fifa.com/worldcup/matches/", target: "_blank" %></li>
           </ul>
         </div><!--end of navbar-links -->
-    </nav>  <!-- End of nav element --> 
 
+    </nav>  <!-- End of nav element --> 
     <div class="container bodyContent"> 
       <%= yield %>
     </div> 
-  
+    <script type = "text/javascript">  
+          function fun() {  
+            const navbarLinks = document.getElementsByClassName('navbar-links')[0];
+            navbarLinks.classList.toggle('active');
+          }  
+    </script>
   </body>
 </html>

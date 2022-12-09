@@ -3,6 +3,7 @@
   <head>
     <title><% if content_for?(:title) %><%= yield :title %><% else %>World Cup<% end %></title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="script.js" defer></script>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
@@ -11,16 +12,20 @@
   <body>
     <nav class="navbar navbar-fixed-top">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a href="#" class="navbar-brand"><%= image_tag 'logo.png', width: "72", height: "33" %></a>
+          <a href="#" class="navbar-brand">
+            <%= image_tag 'logo.png', width: "72", height: "33" %>
+          </a>
         </div> <!--end navbar-header -->
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
+        <%# <a href="#" class="toggle-button">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </a> %>
+          <a href="#" class="toggle-button">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
         <div class="navbar-links">
           <ul class="navbar-right">
             <li><%= link_to  '', root_path, class: "glyphicon glyphicon-home"  %></li> 
@@ -37,6 +42,6 @@
     <div class="container bodyContent"> 
       <%= yield %>
     </div> 
-    
+  
   </body>
 </html>

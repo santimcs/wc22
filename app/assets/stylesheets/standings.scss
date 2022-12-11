@@ -1,3 +1,88 @@
 // Place all the styles related to the standings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:300,600');
+
+body {
+	font-family: 'Work Sans', sans-serif;
+	font-weight: 400;
+}
+
+#standings table {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.75em;
+	  table-layout: auto;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#standings th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+
+#standings td, #standings th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#standings td:nth-child(1), #standings th:nth-child(1) {
+  width: 6%;
+  text-align: center;
+}
+
+#standings td:nth-child(2), #standings th:nth-child(2) {
+  width: 30%;
+  text-align: left;
+}
+
+#standings td:nth-child(3), #standings th:nth-child(3) {
+  width: 8%;
+  text-align: center;
+}
+
+#standings td:nth-child(4), #standings th:nth-child(4) {
+  width: 8%;
+  text-align: center;
+}
+
+#standings td:nth-child(5), #standings th:nth-child(5) {
+  width: 8%;
+  text-align: center;
+}
+
+#standings td:nth-child(6), #standings th:nth-child(6) {
+  width: 8%;
+  text-align: center;
+}
+
+#standings td:nth-child(7), #standings th:nth-child(7) {
+  width: 8%;
+  text-align: center;
+}
+
+#standings td:nth-child(8), #standings th:nth-child(8) {
+  width: 8%;
+  text-align: center;
+}
+
+#standings td:nth-child(3), #standings th:nth-child(3) {
+  width: 8%;
+  text-align: center;
+}
+
+#standings td:nth-child(3), #standings th:nth-child(3) {
+  width: 8%;
+  text-align: center;
+}
+
+#standings tr:nth-child(even){background-color: #f2f2f2;}
+
+#standings tr:hover {background-color: #ddd;}
+
+#standings a:link {
+	text-decoration: underline;
+}

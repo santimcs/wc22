@@ -3,7 +3,8 @@ class StandingsController < ApplicationController
 
   # GET /standings or /standings.json
   def index
-    @standings = Standing.all
+    @standings = Standing.joins(:team).order("teams.group ASC, points DESC,
+      (goals_for - goals_against) DESC, goals_for DESC, ranking ASC")
   end
 
   # GET /standings/1 or /standings/1.json
@@ -65,6 +66,6 @@ class StandingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def standing_params
-      params.require(:standing).permit(:team_id, :wins, :draws, :losses, :goals_for, :goals_against, :points)
+      params.require(:standing).permit(:team, :wins, :draws, :losses, :goals_for, :goals_against, :points)
     end
 end

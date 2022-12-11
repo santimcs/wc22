@@ -15,13 +15,17 @@
  *= require_tree .
  */
 
+ @import url('https://fonts.googleapis.com/css?family=Work+Sans:300,600');
+
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    padding: 0;
+	font-family: 'Work Sans', sans-serif;
+	font-weight: 400;    
     background-color: #eeeee4 !important;
 }
 

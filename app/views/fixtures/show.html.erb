@@ -1,39 +1,57 @@
 <p id="notice"><%= notice %></p>
 
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+  <h1>Fixture Details</h1>
+  <div>
+    <a href="/fixtures?year=<%= @fixture.year %>" style="padding: 8px 16px; background-color: #550065; color: white; text-decoration: none; border-radius: 4px;">Back to Fixtures</a>
+  </div>
+</div>
+
+<p>
+  <strong>Year:</strong>
+  <%= @fixture.year %>
+</p>
+
 <p>
   <strong>Round:</strong>
-  <%= @fixture.round.name %>
+  <%= @fixture.round.name if @fixture.round %>
 </p>
 
 <p>
   <strong>Date:</strong>
-  <%= @fixture.date %>
+  <%= @fixture.date.strftime("%A, %B %d, %Y") if @fixture.date %>
 </p>
 
 <p>
   <strong>Session:</strong>
-  <%= @fixture.session.format_time %>
+  <%= @fixture.session.format_time if @fixture.session %>
 </p>
 
 <p>
-  <strong>Home:</strong>
-  <%= @fixture.home.name %>
+  <strong>Home team:</strong>
+  <% if @fixture.home %>
+    <img src="<%= flag_url(@fixture.home.name) %>" width="50" height="25" style="margin-right: 10px; vertical-align: middle;" onerror="this.src='https://via.placeholder.com/50x25?text=No+Flag'" />
+    <%= @fixture.home.name %>
+  <% end %>
 </p>
 
 <p>
-  <strong>Home flag:</strong>
-  <%= image_tag @fixture.home.flag %>
+  <strong>Away team:</strong>
+  <% if @fixture.away %>
+    <img src="<%= flag_url(@fixture.away.name) %>" width="50" height="25" style="margin-right: 10px; vertical-align: middle;" onerror="this.src='https://via.placeholder.com/50x25?text=No+Flag'" />
+    <%= @fixture.away.name %>
+  <% end %>
 </p>
 
 <p>
   <strong>Channel:</strong>
-  <%= image_tag @fixture.channel.logo %>
+  <%= @fixture.channel.name if @fixture.channel %>
 </p>
 
 <p>
-  <strong>Away flag:</strong>
-  <%= image_tag @fixture.away.flag %>
+  <strong>Criterium:</strong>
+  <%= @fixture.criterium.show_date if @fixture.criterium %>
 </p>
 
 <%= link_to 'Edit', edit_fixture_path(@fixture) %> |
-<%= link_to 'Back', fixtures_path %>
+<%= link_to 'Back', fixtures_path(year: @fixture.year) %>

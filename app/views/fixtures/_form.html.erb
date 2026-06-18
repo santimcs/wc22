@@ -4,16 +4,21 @@
       <h2><%= pluralize(fixture.errors.count, "error") %> prohibited this fixture from being saved:</h2>
 
       <ul>
-      <% fixture.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% fixture.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
-    <div class="field">
+  <div class="field">
+    <%= form.label :year %>
+    <%= form.select :year, [2022, 2026], { include_blank: false }, { class: "form-control", id: "fixture_year", onchange: "location.href = '/fixtures/new?year=' + this.value" } %>
+  </div>
+
+  <div class="field">
     <%= form.label :round_id %>
-    <%= form.collection_select :round_id, Round.order("sequence asc"), :id, :name %>
+    <%= form.collection_select :round_id, Round.where(year: fixture.year || 2026).order("sequence asc"), :id, :name, include_blank: true %>
   </div>
 
   <div class="field">
@@ -23,26 +28,39 @@
 
   <div class="field">
     <%= form.label :session_id %>
-    <%= form.collection_select :session_id, Session.order("sequence ASC"), :id, 
-          :format_time %>
+    <%= form.collection_select :session_id, Session.order("sequence ASC"), :id, :format_time, include_blank: true %>
   </div>
 
   <div class="form-group">
     <%= form.label :home_id %>
-    <%= form.collection_select :home_id, Team.order("name ASC"), :id, :name %>
+    <%= form.collection_select :home_id, Team.where(year: fixture.year || 2026).order(:group, :name), :id, :name, include_blank: true %>
   </div>
 
   <div class="form-group">
     <%= form.label :away_id %>
-    <%= form.collection_select :away_id, Team.order("name ASC"), :id, :name %>
+    <%= form.collection_select :away_id, Team.where(year: fixture.year || 2026).order(:group, :name), :id, :name, include_blank: true %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :channel_id %>
+    <%= form.collection_select :channel_id, Channel.order("number ASC"), :id, :name, include_blank: true %>
   </div>
 
-    <div class="field">
-    <%= form.label :channel_id %>
-    <%= form.collection_select :channel_id, Channel.order("number asc"), :id, :name %>
-  </div> 
+  <div class="field">
+    <%= form.label :criterium_id %>
+    <%= form.collection_select :criterium_id, Criterium.all, :id, :show_date, include_blank: true %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+
+<script>
+  // Optional: Update team list when year changes without page reload
+  document.getElementById('fixture_year')?.addEventListener('change', function() {
+    var year = this.value;
+    var url = '/fixtures/new?year=' + year;
+    window.location.href = url;
+  });
+</script>

@@ -1,0 +1,49 @@
+name,group,ranking,flag
+USA,A,16,usa_flag.png
+Mexico,A,14,mexico_flag.png
+Canada,A,45,canada_flag.png
+Trinidad and Tobago,A,101,trinidad_flag.png
+Argentina,B,1,argentina_flag.png
+Uruguay,B,11,uruguay_flag.png
+Chile,B,42,chile_flag.png
+New Zealand,B,105,new_zealand_flag.png
+Brazil,C,3,brazil_flag.png
+Colombia,C,17,colombia_flag.png
+Paraguay,C,53,paraguay_flag.png
+Peru,C,21,peru_flag.png
+Ecuador,D,36,ecuador_flag.png
+Venezuela,D,54,venezuela_flag.png
+Bolivia,D,83,bolivia_flag.png
+Chile,D,42,chile_flag.png
+France,E,2,france_flag.png
+England,E,5,england_flag.png
+Netherlands,E,6,netherlands_flag.png
+Greece,E,49,greece_flag.png
+Spain,F,8,spain_flag.png
+Portugal,F,9,portugal_flag.png
+Belgium,F,4,belgium_flag.png
+Czech Republic,F,36,czech_flag.png
+Germany,G,10,germany_flag.png
+Italy,G,7,italy_flag.png
+Croatia,G,12,croatia_flag.png
+Hungary,G,33,hungary_flag.png
+Switzerland,H,13,switzerland_flag.png
+Poland,H,22,poland_flag.png
+Denmark,H,19,denmark_flag.png
+Austria,H,25,austria_flag.png
+Morocco,I,23,morocco_flag.png
+Senegal,I,18,senegal_flag.png
+Egypt,I,34,egypt_flag.png
+Tunisia,I,35,tunisia_flag.png
+Japan,J,20,japan_flag.png
+South Korea,J,27,south_korea_flag.png
+Australia,J,38,australia_flag.png
+China,J,79,china_flag.png
+Saudi Arabia,K,53,saudi_arabia_flag.png
+Iran,K,24,iran_flag.png
+Qatar,K,61,qatar_flag.png
+UAE,K,70,uae_flag.png
+Nigeria,L,30,nigeria_flag.png
+Ghana,L,31,ghana_flag.png
+Cameroon,L,43,cameroon_flag.png
+Ivory Coast,L,50,ivory_coast_flag.png
